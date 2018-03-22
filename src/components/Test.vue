@@ -32,12 +32,6 @@ export default {
       ],
     };
   },
-  mounted() {
-    window.addEventListener('scroll', jashdfbshdbfs)
-  },
-  beforeDestroy() {
-    window.removeEventListener
-  },
   methods: {
     changeMessage() {
       this.message = 'The message has changed!';
