@@ -10,10 +10,10 @@
     <p v-bind:class="cssClass">Class: {{ cssClass }}</p>
 
     <ol>
-	    <li v-for="todo in todos">
-	      {{ todo.text }}
-	    </li>
-	    </ol>
+      <li v-for="(todo, key) in todos" :key="key">
+        {{ key }}{{ todo.text }}
+      </li>
+     </ol>
   </div>
 </template>
 
@@ -26,25 +26,25 @@ export default {
       cssClass: '',
       clicks: 0,
       todos: [
-          { text: 'Learn JavaScript' },
-          { text: 'Learn Vue' },
-          { text: 'Build something awesome' }
-      ]
+        { text: 'Learn JavaScript' },
+        { text: 'Learn Vue' },
+        { text: 'Build something awesome' },
+      ],
     };
   },
   methods: {
-        changeMessage () {
-            this.message = 'The message has changed!'
-        },
-        increment () {
-          this.clicks++;
-        }
+    changeMessage() {
+      this.message = 'The message has changed!';
     },
-    computed: {
-      counter () {
-					return this.clicks * 2
-      }
-    }
+    increment() {
+      this.clicks = this.clicks + 1;
+    },
+  },
+  computed: {
+    counter() {
+      return this.clicks * 2;
+    },
+  },
 };
 </script>
 
