@@ -1,8 +1,8 @@
 <template>
   <div class="test">
-    <button v-on:click="message = 'Start message'">Click me!</button>
+    <button v-on:click="changeMessage">Click me!</button>
     <p>{{ message }}</p>
-    <button v-on:click="increment= '0'">Increment</button>
+    <button v-on:click="increment">Increment</button>
     <p> Counter: {{ counter }} </p>
     <p style="padding-top: 10px"> Clicks: {{ clicks }}</p>
 
@@ -24,7 +24,6 @@ export default {
     return {
       message: 'Start message',
       cssClass: '',
-      counter: 0,
       clicks: 0,
       todos: [
           { text: 'Learn JavaScript' },
