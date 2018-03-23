@@ -1,14 +1,24 @@
-<div id="registrations">
-  <div class="summary">
-    <h3>Registrations</h3>
-    <h5>Total: {{ total }}</h5>
+<div >
+  <div id="registrations">
+    <div class="summary">
+      <h3>Registrations</h3>
+      <h5>Total: {{ total }}</h5>
+    </div>
+    <hr>
+    <div class="row" v-for="registration in registrations">
+      <h4>{{ registration.name }}</h4>
+      <span @click="unregister(registration)">(Unregister)</span>
+      <div class="date">{{ registration.date }}</div>
+    </div>
   </div>
-  <hr>
-  <div class="row" v-for="registration in registrations">
-    <h4>{{ registration.name }}</h4>
-    <span @click="unregister(registration)">(Unregister)</span>
-    <div class="date">{{ registration.date }}</div>
+
+  <div>
+    <div>
+      <app-registration @userRegistered="userRegistered" :users="unregisteredUsers"></app-registration>
+    </div>
+    <div>
+      <app-registrations @userUnregistered="userUnregistered" :registrations="registrations"></app-registrations>
+    </div>
   </div>
-  <app-registration @userRegistered="userRegistered" :users="unregisteredUsers"></app-registration>
-  <app-registrations @userUnregistered="userUnregistered" :registrations="registrations"></app-registrations>
+
 </div>

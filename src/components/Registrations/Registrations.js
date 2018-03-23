@@ -12,10 +12,6 @@ const RegistrationsComponent = Vue.extend({
     registered: Boolean,
   },
   methods: {
-    userRegistered(user) {
-      const date = new Date;
-      this.registrations.push({ userId: user.id, name: user.name, date: date.getMonth() + '/' + date.getDay() });
-    },
     userUnregistered(registration) {
       const user = this.users.find(user => {
         return user.id === registration.userId;
@@ -25,6 +21,14 @@ const RegistrationsComponent = Vue.extend({
     },
     unregister(registration) {
       this.$emit('userUnregistered', registration);
+    },
+    userRegistered(user) {
+      const date = new Date;
+      this.registrations.push({ userId: user.id, name: user.name, date: date.getMonth() + '/' + date.getDay() });
+    },
+    registerUser(user) {
+      this.$emit('userRegistered', user);
+      user.registered = true;
     },
   },
   computed: {
