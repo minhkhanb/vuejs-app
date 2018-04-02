@@ -4,8 +4,7 @@ import Router from 'vue-router';
 import HelloWorld from '@/components/HelloWorld';
 import Test from '@/components/Test';
 import Login from '@/components/Login';
-import Registration from '@/components/Registration/index';
-import Registrations from '@/components/Registrations/index';
+import SignUp from '@/components/SignUp/index';
 
 Vue.use(Router);
 
@@ -27,14 +26,9 @@ export default new Router({
       component: Login,
     },
     {
-      path: '/registration',
-      name: 'Registration',
-      component: Registration,
-    },
-    {
-      path: '/registrations',
-      name: 'Registrations',
-      component: Registrations,
+      path: '/SignUp',
+      name: 'SignUp',
+      component: SignUp,
     },
   ],
 });

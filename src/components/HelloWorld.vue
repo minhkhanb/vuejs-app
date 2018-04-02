@@ -4,14 +4,7 @@
     <h2>
       <ul>
         <li>
-          <router-link to="registration">Registration</router-link>
-        </li>
-      </ul>
-    </h2>
-    <h2>
-      <ul>
-        <li>
-          <router-link to="registration">Registrations</router-link>
+          <router-link to="SignUp">Registration</router-link>
         </li>
       </ul>
     </h2>

@@ -1,5 +1,5 @@
 <div >
-  <div id="registrations">
+  <div>
     <div class="summary">
       <h3>Registrations</h3>
       <h5>Total: {{ total }}</h5>
@@ -11,14 +11,4 @@
       <div class="date">{{ registration.date }}</div>
     </div>
   </div>
-
-  <div>
-    <div>
-      <app-registration @userRegistered="userRegistered" :users="unregisteredUsers"></app-registration>
-    </div>
-    <div>
-      <app-registrations @userUnregistered="userUnregistered" :registrations="registrations"></app-registrations>
-    </div>
-  </div>
-
 </div>
