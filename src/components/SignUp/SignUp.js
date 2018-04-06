@@ -32,7 +32,7 @@ const SignUpComponent = Vue.extend({
   methods: {
     userRegistered(user) {
       const date = new Date;
-      this.registrations.push({ userId: user.id, name: user.name, date: date.getMonth() + '/' + date.getDay() });
+      this.registrations.push({ userId: user.id, name: user.name, date: (date.getMonth() + '/' + date.getDay()) });
     },
     userUnregistered(registration) {
       const user = this.users.find(user => {

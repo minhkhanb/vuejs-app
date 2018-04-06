@@ -10,8 +10,8 @@ const RegistrationsComponent = Vue.extend({
   computed: {
     total() {
       return this.registrations.length;
-    }
-  }
+    },
+  },
 });
 
 export default RegistrationsComponent;

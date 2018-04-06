@@ -8,6 +8,13 @@
         </li>
       </ul>
     </h2>
+    <h2>
+      <ul>
+        <li>
+          <router-link to="users">Users</router-link>
+        </li>
+      </ul>
+    </h2>
     <h2>Essential Links</h2>
     <ul>
       <li>
