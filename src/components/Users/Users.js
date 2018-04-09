@@ -1,12 +1,12 @@
 import Vue from 'vue';
 
-import AddUser from './AddUser/index';
-import ListUser from './ListUser/index';
+import UserAdd from './UserAdd/index';
+import ListUser from './UserList/index';
 
 const UsersComponent = Vue.extend({
   components: {
-    appAddUser: AddUser,
-    appListUser: ListUser,
+    appUserAdd: UserAdd,
+    appUserList: ListUser,
   },
 });
 

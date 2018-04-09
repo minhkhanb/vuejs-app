@@ -1,0 +1,20 @@
+<!--<link rel="stylesheet" href="path/to/vue-material.css">-->
+<!--<script src="./AddUser.js"></script>-->
+
+<div class="section-user-add" style="">
+  <h3>Add New User</h3>
+
+  <div class="form">
+    <md-field>
+      <label>Name</label>
+      <md-input autofocus></md-input>
+    </md-field>
+
+    <div>
+      <label>Birth year</label>
+      <md-datepicker v-model="selectedDate" :md-disabled-dates="disabledDates" />
+    </div>
+  </div>
+
+  <md-button class="md-raised md-primary">Primary</md-button>
+</div>

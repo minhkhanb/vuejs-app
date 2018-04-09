@@ -5,7 +5,7 @@ const RegistrationsComponent = Vue.extend({
   methods: {
     unregister(registration) {
       this.$emit('userUnregistered', registration);
-    }
+    },
   },
   computed: {
     total() {
