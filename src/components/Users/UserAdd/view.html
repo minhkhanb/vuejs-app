@@ -7,14 +7,17 @@
   <div class="form">
     <md-field>
       <label>Name</label>
-      <md-input autofocus></md-input>
+      <md-input v-model="userAdd.name" autofocus></md-input>
     </md-field>
 
     <div>
       <label>Birth year</label>
-      <md-datepicker v-model="selectedDate" :md-disabled-dates="disabledDates" />
+      <md-datepicker v-model="userAdd.selectedDate" :md-disabled-dates="disabledDates" />
     </div>
   </div>
 
-  <md-button class="md-raised md-primary">Primary</md-button>
+  <div>
+    <md-button class="md-raised md-primary" @click="cancel">Cancel</md-button>
+    <md-button class="md-raised md-primary" @click="addUser">Add User</md-button>
+  </div>
 </div>
