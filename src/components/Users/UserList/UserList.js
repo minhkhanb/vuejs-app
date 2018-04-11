@@ -61,6 +61,43 @@ const ListUserComponent = Vue.extend({
     searchOnTable() {
       this.searched = searchByName(this.users, this.search)
     },
+
+    calcAge (s) {
+      // let dateString = s.split('-');
+       let today = new Date()
+       let birthDate = new Date(s)
+       console.log(birthDate)
+       let age = today.getFullYear() - birthDate.getFullYear()
+       let m = today.getMonth() - birthDate.getMonth()
+       if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+         age--
+       }
+       console.log(age)
+       if (age > 19) {
+         return 'Yes'
+       }
+       return 'No'
+     },
+
+     convert (s) {
+      let arr = s.split(',')
+      return (
+        <ul>{arr.map((item, index) => (
+          <li key={index}>{item}</li>
+        ))}</ul>
+      )
+    },
+    
+    convertHours (s) {
+      let arr = s.split(',');
+      return (
+        <ul> {arr.map((item,index) => (
+            <li key={index}>{Number(item) > 12 ? ((Number(item) - 12) + "PM") : (Number(item) + "AM")}</li>
+            ))}
+        </ul>
+  
+      )
+    }
   },
   created() {
     this.searched = this.users;

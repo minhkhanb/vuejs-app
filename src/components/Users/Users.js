@@ -8,6 +8,21 @@ const UsersComponent = Vue.extend({
     appUserAdd: UserAdd,
     appUserList: UserList,
   },
+
+  props: {
+    firstName: String,
+    gender: String
+  },
+
+  methods: {
+
+  },
+
+  data() {
+    return {
+
+    }
+  },
 });
 
 export default UsersComponent;
