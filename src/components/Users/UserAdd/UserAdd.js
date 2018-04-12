@@ -49,8 +49,16 @@ const UserAddComponent = Vue.extend({
             this.$v.$touch()
     
             if (!this.$v.$invalid) {
-              this.saveUser()
+            //   this.saveUser()
+            var new_member = {
+                firstName: String,
+                gender: String
+            };
+            new_member.firstName = this.form.firstName;
+            new_member.gender = this.form.gender;            
+            this.$emit('userAdded', new_member);
             }
+            this.clearForm();
         },
 
         renew() {

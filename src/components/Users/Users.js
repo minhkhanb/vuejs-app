@@ -10,18 +10,21 @@ const UsersComponent = Vue.extend({
   },
 
   props: {
-    firstName: String,
-    gender: String
-  },
-
-  methods: {
-
   },
 
   data() {
     return {
-
+      users: [],
     }
+  },
+
+  methods: {
+    userAdded(new_member) {
+      this.users.push(new_member);
+
+      console.log(this.users);
+    },
+
   },
 });
 
