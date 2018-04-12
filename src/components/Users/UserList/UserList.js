@@ -2,7 +2,7 @@ import Vue from 'vue';
 
 const ListUserComponent = Vue.extend({
   props: ['users'],
-  // name: 'TableSearch',
+  name: 'TableSearch',
   // data: () => ({
   //   search: null,
   //   searched: [],
@@ -42,24 +42,24 @@ const ListUserComponent = Vue.extend({
     //   this.searched = searchByName(this.users, this.search)
     // },
 
-    // calcAge (s) {
+    // calcAge(s) {
     //   // let dateString = s.split('-');
-    //    let today = new Date()
-    //    let birthDate = new Date(s)
-    //    console.log(birthDate)
-    //    let age = today.getFullYear() - birthDate.getFullYear()
-    //    let m = today.getMonth() - birthDate.getMonth()
-    //    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
-    //      age--
-    //    }
-    //    console.log(age)
-    //    if (age > 19) {
-    //      return 'Yes'
-    //    }
-    //    return 'No'
-    //  },
+    //   let today = new Date();
+    //   let birthDate = new Date(s);
+    //   console.log(birthDate);
+    //   let age = today.getFullYear() - birthDate.getFullYear();
+    //   let m = today.getMonth() - birthDate.getMonth();
+    //   if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+    //     age--;
+    //   }
+    //   console.log(age);
+    //   if (age > 19) {
+    //     return 'Yes';
+    //   }
+    //   return 'No';
+    // },
 
-    //  convert (s) {
+    // convert(s) {
     //   let arr = s.split(',')
     //   return (
     //     <ul>{arr.map((item, index) => (
@@ -67,21 +67,19 @@ const ListUserComponent = Vue.extend({
     //     ))}</ul>
     //   )
     // },
-    
+
     // convertHours (s) {
     //   let arr = s.split(',');
     //   return (
     //     <ul> {arr.map((item,index) => (
     //         <li key={index}>{Number(item) > 12 ? ((Number(item) - 12) + "PM") : (Number(item) + "AM")}</li>
     //         ))}
-    //     </ul>
-  
-    //   )
-    // }
+    //     </ul>)
+    // },
   },
-  // created() {
-  //   this.searched = this.users;
-  // },
+  created() {
+    this.searched = this.users;
+  },
 });
 
 export default ListUserComponent;

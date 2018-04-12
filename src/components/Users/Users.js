@@ -15,12 +15,12 @@ const UsersComponent = Vue.extend({
   data() {
     return {
       users: [],
-    }
+    };
   },
 
   methods: {
-    userAdded(new_member) {
-      this.users.push(new_member);
+    userAdded(newMember) {
+      this.users.push(newMember);
 
       console.log(this.users);
     },
