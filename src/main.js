@@ -4,13 +4,18 @@ import Vue from 'vue';
 
 // Add material
 import VueMaterial from 'vue-material';
+import Element from 'element-ui';
+
 import 'vue-material/dist/vue-material.min.css';
 import 'vue-material/dist/theme/default.css';
+import 'element-ui/lib/theme-chalk/index.css';
 
 import App from './App';
 import router from './router';
 
 Vue.use(VueMaterial);
+Vue.use(Element);
+
 Vue.config.productionTip = false;
 
 /* eslint-disable no-new */
