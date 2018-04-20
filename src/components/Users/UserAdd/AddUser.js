@@ -1,5 +1,7 @@
 import Vue from 'vue';
 import { DatePicker } from 'element-ui';
+import mdPicker from 'vue-bootstrap-datetimepicker';
+import 'eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css';
 
 Vue.use(DatePicker);
 
@@ -12,8 +14,20 @@ const UserAddComponent = Vue.extend({
 
   components: {
     [DatePicker.name]: DatePicker,
+    mdPicker: mdPicker,
   },
   props: {},
+  computed: {
+    yearsBD() {
+      let arr = [];
+      const d = new Date();
+      const yearPresent = d.getFullYear();
+      for (let i = 1950; i < yearPresent; i++) {
+        arr.push(i);
+      }
+      return arr;
+    },
+  },
   methods: {
     getValidationClass(fieldName) {
       const field = this.$v.form[fieldName];
@@ -24,13 +38,14 @@ const UserAddComponent = Vue.extend({
         };
       }
     },
+
     clearForm() {
       this.$v.$reset();
       this.form.firstName = null;
       // this.form.lastName = null
       // this.form.age = null
       this.form.gender = null;
-      // this.form.email = null
+      this.form.datePicker = null;
     },
     saveUser() {
       this.sending = true;
@@ -49,12 +64,20 @@ const UserAddComponent = Vue.extend({
 
       if (!this.$v.$invalid) {
         //   this.saveUser()
-        var newMember = {
+        const newMember = {
           firstName: String,
           gender: String,
+          datePicker: String,
+          age: String,
         };
+        const d = new Date();
+        const yearPresent = d.getFullYear();
+
         newMember.firstName = this.form.firstName;
         newMember.gender = this.form.gender;
+        newMember.datePicker = this.form.datePicker;
+        newMember.age = yearPresent - this.form.datePicker;
+
         this.$emit('userAdded', newMember);
         this.clearForm();
       }
@@ -72,14 +95,6 @@ const UserAddComponent = Vue.extend({
     addUser() {
       return true;
     },
-
-    // disabledDates() {
-    //   let disabled_dates = [];
-    //   if (Date.getYear() <= 1950) {
-    //     disabled_dates = disabled_dates.push(Date.getDay);
-    //   }
-    //   return false;
-    // },
   },
 
   validations: {
@@ -110,6 +125,11 @@ const UserAddComponent = Vue.extend({
   // },
   data() {
     return {
+      date: new Date(),
+      config: {
+        format: 'DD/MM/YYYY',
+        useCurrent: false,
+      },
       userSaved: false,
       sending: false,
       lastUser: null,
@@ -117,6 +137,7 @@ const UserAddComponent = Vue.extend({
         firstName: null,
         // lastName: null,
         gender: null,
+        datePicker: null,
         // age: null,
         // email: null
       },
@@ -139,32 +160,6 @@ const UserAddComponent = Vue.extend({
       },
       selects: {
         simple: '',
-        // countries: [{value: 'Bahasa Indonesia', label: 'Bahasa Indonesia'},
-        //   {value: 'Bahasa Melayu', label: 'Bahasa Melayu'},
-        //   {value: 'Català', label: 'Català'},
-        //   {value: 'Dansk', label: 'Dansk'},
-        //   {value: 'Deutsch', label: 'Deutsch'},
-        //   {value: 'English', label: 'English'},
-        //   {value: 'Español', label: 'Español'},
-        //   {value: 'Eλληνικά', label: 'Eλληνικά'},
-        //   {value: 'Français', label: 'Français'},
-        //   {value: 'Italiano', label: 'Italiano'},
-        //   {value: 'Magyar', label: 'Magyar'},
-        //   {value: 'Nederlands', label: 'Nederlands'},
-        //   {value: 'Norsk', label: 'Norsk'},
-        //   {value: 'Polski', label: 'Polski'},
-        //   {value: 'Português', label: 'Português'},
-        //   {value: 'Suomi', label: 'Suomi'},
-        //   {value: 'Svenska', label: 'Svenska'},
-        //   {value: 'Türkçe', label: 'Türkçe'},
-        //   {value: 'Íslenska', label: 'Íslenska'},
-        //   {value: 'Čeština', label: 'Čeština'},
-        //   {value: 'Русский', label: 'Русский'},
-        //   {value: 'ภาษาไทย', label: 'ภาษาไทย'},
-        //   {value: '中文 (简体)', label: '中文 (简体)'},
-        //   {value: 'W">中文 (繁體)', label: 'W">中文 (繁體)'},
-        //   {value: '日本語', label: '日本語'},
-        //   {value: '한국어', label: '한국어'}],
         multiple: 'ARS',
       },
       tags: {

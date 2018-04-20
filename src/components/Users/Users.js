@@ -12,6 +12,9 @@ const UsersComponent = Vue.extend({
   props: {
   },
 
+  computed: {
+  },
+
   data() {
     return {
       users: [],
@@ -23,6 +26,10 @@ const UsersComponent = Vue.extend({
       this.users.push(newMember);
 
       console.log(this.users);
+    },
+
+    removeItem(index) {
+      return false;
     },
 
   },

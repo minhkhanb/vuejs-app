@@ -36,15 +36,18 @@
 
           <div class="md-layout md-gutter">
             <div class="md-layout-item md-small-size-100">
-              <label for="date">Date Picker</label>
-              <!--<h4 class="card-title">Date Picker</h4>-->
-              <div class="form-group">
-                <el-date-picker v-model="datePicker" type="date" placeholder="Pick a day"
-                                :picker-options="pickerOptions1">
-                </el-date-picker>
-              </div>
+              <md-field :class="getValidationClass('gender')">
+                <label for="by">Birth Year</label>
+                <md-select name="datePicker" id="datePicker" v-model="form.datePicker" md-dense :disabled="sending">
+                  <md-option v-for="(value, key) in yearsBD" :value="value">
+                    {{value}}
+                  </md-option>
+                </md-select>
+                <span class="md-error">The gender is required</span>
+              </md-field>
             </div>
           </div>
+
         </md-card-content>
 
         <md-progress-bar md-mode="indeterminate" v-if="sending" />
