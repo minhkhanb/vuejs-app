@@ -13,9 +13,9 @@
           </md-field>
         </md-table-toolbar>
 
-        <!--<md-table-row slot="md-table-row" v-for="(item, index) in users">-->
-        <md-table-row slot="md-table-row" slot-scope="{ item, index }" :key="index">
-          <md-table-cell md-label="No." >{{ index }}</md-table-cell>
+        <md-table-row slot="md-table-row" v-for="(item, index) in users">
+        <!--<md-table-row slot="md-table-row" slot-scope="{ item }" >-->
+          <md-table-cell md-label="No." md-numeric="" >{{ index }}</md-table-cell>
           <md-table-cell md-label="Name" md-sort-by="name">{{ item.firstName }}</md-table-cell>
           <md-table-cell md-label="Age" >{{ item.age }}</md-table-cell>
           <md-table-cell md-label="Gender" md-sort-by="gender">{{ item.gender }}</md-table-cell>

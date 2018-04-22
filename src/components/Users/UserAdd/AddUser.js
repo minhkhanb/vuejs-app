@@ -146,18 +146,6 @@ const UserAddComponent = Vue.extend({
       // date
       enabledRadio: '2',
       disabledRadio: '2',
-      switches: {
-        dinOn: true,
-        plainOff: false,
-        witefaultOn: true,
-        defaultOff: false,
-        plahIconsOn: true,
-        withIconsOff: false
-      },
-      sliders: {
-        simple: 30,
-        rangeSlider: [20, 50]
-      },
       selects: {
         simple: '',
         multiple: 'ARS',
@@ -165,7 +153,7 @@ const UserAddComponent = Vue.extend({
       tags: {
         dynamicTags: ['Tag 1', 'Tag 2', 'Tag 3'],
         inputVisible: false,
-        inputValue: ''
+        inputValue: '',
       },
       pickerOptions1: {
         shortcuts: [{
