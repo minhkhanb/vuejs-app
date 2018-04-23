@@ -59,6 +59,12 @@ const UserAddComponent = Vue.extend({
         this.clearForm();
       }, 1500);
     },
+
+    capitalizeFirstLetters(str) {
+      return str.toLowerCase().replace(/^\w|\s\w/g, (letter =>
+        letter.toUpperCase()
+      ));
+    },
     validateUser() {
       this.$v.$touch();
 
@@ -72,8 +78,7 @@ const UserAddComponent = Vue.extend({
         };
         const d = new Date();
         const yearPresent = d.getFullYear();
-
-        newMember.firstName = this.form.firstName;
+        newMember.firstName = this.capitalizeFirstLetters(this.form.firstName);
         newMember.gender = this.form.gender;
         newMember.datePicker = this.form.datePicker;
         newMember.age = yearPresent - this.form.datePicker;
