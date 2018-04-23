@@ -27,12 +27,7 @@ const UsersComponent = Vue.extend({
     },
 
     removeUser(index) {
-      for (let i = 0; i < this.users.length; i++) {
-        if (i === index) {
-          this.items.remove(this.users[i]);
-        }
-      }
-      console.log(this.users);
+      this.users.splice(index, 1);
     },
 
   },

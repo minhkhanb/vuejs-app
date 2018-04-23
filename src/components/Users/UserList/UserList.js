@@ -11,7 +11,6 @@ const ListUserComponent = Vue.extend({
   },
   methods: {
     removeElement(index) {
-      // this.items.$remove(index);
       this.$emit('removeUser', index);
     },
   },

@@ -42,8 +42,6 @@ const UserAddComponent = Vue.extend({
     clearForm() {
       this.$v.$reset();
       this.form.firstName = null;
-      // this.form.lastName = null
-      // this.form.age = null
       this.form.gender = null;
       this.form.datePicker = null;
     },
@@ -52,8 +50,6 @@ const UserAddComponent = Vue.extend({
 
       // Instead of this timeout, here you can call your API
       window.setTimeout(() => {
-        //   this.lastUser = `${this.form.firstName} ${this.form.lastName}`
-        //   this.lastUser = `${this.form.firstName} ${this.form.lastName}`
         this.userSaved = true;
         this.sending = false;
         this.clearForm();
@@ -91,10 +87,7 @@ const UserAddComponent = Vue.extend({
     renew() {
       this.$v.$reset();
       this.form.firstName = null;
-      // this.form.lastName = null;
-      // this.form.age = null;
       this.form.gender = null;
-      // this.form.email = null;
     },
 
     addUser() {
@@ -108,21 +101,10 @@ const UserAddComponent = Vue.extend({
         required: validators.required,
         minLength: (0, validators.minLength)(3),
       },
-      //   lastName: {
-      //     required: validators.required,
-      //     minLength: (0, validators.minLength)(3)
-      //   },
-      //   age: {
-      //     required: validators.required,
-      //     maxLength: (0, validators.maxLength)(3)
-      //   },
+
       gender: {
         required: validators.required,
       },
-      //   email: {
-      //     required: validators.required,
-      //     email: validators.email
-      //   }
     },
   },
 

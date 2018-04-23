@@ -1,36 +1,3 @@
-<!--<div class="section-user-list">-->
-  <!--<h3>List Users</h3>-->
-  <!--<div class="table-user">-->
-    <!--<div>-->
-      <!--<md-table v-model="searched" md-sort="name" md-sort-order="asc" md-card md-fixed-header>-->
-        <!--<md-table-toolbar>-->
-          <!--<div class="md-toolbar-section-start">-->
-            <!--<h1 class="md-title">Users</h1>-->
-          <!--</div>-->
-
-          <!--<md-field md-clearable class="md-toolbar-section-end">-->
-            <!--<md-input placeholder="Search by name..." v-model="search" @input="searchOnTable" />-->
-          <!--</md-field>-->
-        <!--</md-table-toolbar>-->
-
-        <!--<md-table-row slot="md-table-row" v-for="(item, index) in users">-->
-        <!--&lt;!&ndash;<md-table-row slot="md-table-row" slot-scope="{ item }" >&ndash;&gt;-->
-          <!--<md-table-cell md-label="No." md-numeric="" >{{ index }}</md-table-cell>-->
-          <!--<md-table-cell md-label="Name" md-sort-by="name">{{ item.firstName }}</md-table-cell>-->
-          <!--<md-table-cell md-label="Age" >{{ item.age }}</md-table-cell>-->
-          <!--<md-table-cell md-label="Gender" md-sort-by="gender">{{ item.gender }}</md-table-cell>-->
-          <!--<md-table-cell md-label="Action" md-sort-by="title">-->
-            <!--<p>-->
-              <!--<span class="glyphicon glyphicon-trash"></span>-->
-            <!--</p>-->
-          <!--</md-table-cell>-->
-        <!--</md-table-row>-->
-      <!--</md-table>-->
-    <!--</div>-->
-  <!--</div>-->
-<!--</div>-->
-
-
 <div class="section-user-list">
   <h3>List Users</h3>
   <div class="table-user">
@@ -43,7 +10,7 @@
           <md-table-head>Gender</md-table-head>
           <md-table-head>Action</md-table-head>
         </md-table-row>
-        <md-table-row slot="md-table-row" v-for="(item, index) in users">
+        <md-table-row slot="md-table-row" v-for="(item, index) in users" :key="index">
           <!--<md-table-row slot="md-table-row" slot-scope="{ item }" >-->
           <md-table-cell md-label="No." md-numeric="" >{{ index + 1 }}</md-table-cell>
           <md-table-cell md-label="Name" md-sort-by="name">{{ item.firstName }}</md-table-cell>

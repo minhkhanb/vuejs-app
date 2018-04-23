@@ -39,7 +39,7 @@
               <md-field :class="getValidationClass('gender')">
                 <label for="by">Birth Year</label>
                 <md-select name="datePicker" id="datePicker" v-model="form.datePicker" md-dense :disabled="sending">
-                  <md-option v-for="(value, key) in yearsBD" :value="value">
+                  <md-option v-for="(value, index) in yearsBD" :value="value" :key = index>
                     {{value}}
                   </md-option>
                 </md-select>
