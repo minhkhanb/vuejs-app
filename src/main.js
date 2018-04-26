@@ -10,12 +10,14 @@ import 'vue-material/dist/vue-material.min.css';
 import 'vue-material/dist/theme/default.css';
 import 'element-ui/lib/theme-chalk/index.css';
 import 'bootstrap/dist/css/bootstrap.css';
+import Popover from 'vue-js-popover';
 
 import App from './App';
 import router from './router';
 
 Vue.use(VueMaterial);
 Vue.use(Element);
+Vue.use(Popover);
 
 Vue.config.productionTip = false;
 

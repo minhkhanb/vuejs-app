@@ -6,6 +6,8 @@ import Test from '@/components/Test';
 import Login from '@/components/Login';
 import SignUp from '@/components/SignUp/index';
 import Users from '@/components/Users/index';
+import Loader from '@/components/Loader/index';
+import Tooltip from '@/components/Tooltip/index';
 
 Vue.use(Router);
 
@@ -35,6 +37,16 @@ export default new Router({
       path: '/users',
       name: 'Users',
       component: Users,
+    },
+    {
+      path: '/loader',
+      name: 'Loader',
+      component: Loader,
+    },
+    {
+      path: '/tooltip',
+      name: 'Tooltip',
+      component: Tooltip,
     },
   ],
 });
