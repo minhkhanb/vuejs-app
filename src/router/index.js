@@ -8,6 +8,7 @@ import SignUp from '@/components/SignUp/index';
 import Users from '@/components/Users/index';
 import Loader from '@/components/Loader/index';
 import Tooltip from '@/components/Tooltip/index';
+import Popup from '@/components/Popup/index';
 
 Vue.use(Router);
 
@@ -47,6 +48,11 @@ export default new Router({
       path: '/tooltip',
       name: 'Tooltip',
       component: Tooltip,
+    },
+    {
+      path: '/popup',
+      name: 'Popup',
+      component: Popup,
     },
   ],
 });
