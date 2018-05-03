@@ -32,27 +32,27 @@
       </transition>
     </script>
   <script type="text/x-template" id="modal-template2">
-    <transition name="modal">
-      <div class="modal-mask">
-        <div class="modal-wrapper">
-          <div class="modal-container">
+    <transition name="modal2">
+      <div class="modal-mask2">
+        <div class="modal-wrapper2">
+          <div class="modal-container2">
 
-            <div class="modal-header">
-              <slot name="header">
+            <div class="modal-header2">
+              <slot name="header2">
                 default header
               </slot>
             </div>
 
-            <div class="modal-body">
-              <slot name="body">
+            <div class="modal-body2">
+              <slot name="body2">
                 default body
               </slot>
             </div>
 
-            <div class="modal-footer">
-              <slot name="footer">
+            <div class="modal-footer2">
+              <slot name="footer2">
                 default footer
-                <button class="modal-default-button" @click="$emit('close')">
+                <button class="modal-default-button2" @click="$emit('close')">
                   OK
                 </button>
               </slot>
@@ -80,18 +80,18 @@
     </modal>
   </div>
   <div id="popup2" style="display: inline-block;">
-    <button class="btn primary" id="show-modal" @click="showModal = true">
-      <div class="btn__content">
+    <button class="btn primary" id="show-modal2" @click="showModal2 = true">
+      <div class="btn__content2">
         Open Dialog 2
       </div>
     </button>
     <!-- use the modal component, pass in the prop -->
-    <modal2 v-if="showModal" @close="showModal = false">
+    <modal2 v-if="showModal2" @close="showModal2 = false">
       <!--
         you can use custom content here to overwrite
         default content
       -->
-      <h3 slot="header">custom header</h3>
+      <h3 slot="header2">custom header</h3>
     </modal2>
   </div>
 </div>

@@ -12,6 +12,7 @@ const PopupComponent = Vue.extend({
   data() {
     return {
       showModal: false,
+      showModal2: false,
     };
   },
 });
