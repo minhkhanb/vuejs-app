@@ -9,6 +9,7 @@ import Users from '@/components/Users/index';
 import Loader from '@/components/Loader/index';
 import Tooltip from '@/components/Tooltip/index';
 import Popup from '@/components/Popup/index';
+import PopupFixed from '@/components/PopupFixed/index';
 
 Vue.use(Router);
 
@@ -53,6 +54,11 @@ export default new Router({
       path: '/popup',
       name: 'Popup',
       component: Popup,
+    },
+    {
+      path: '/popup-fixed',
+      name: 'PopupFixed',
+      component: PopupFixed,
     },
   ],
 });

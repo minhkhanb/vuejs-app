@@ -1,3 +1,5 @@
+$color-white: #ffffff;
+
 .modal-mask {
   position: fixed;
   z-index: 9998;
@@ -8,6 +10,29 @@
   background-color: rgba(0, 0, 0, .2);
   display: table;
   transition: opacity .4s ease-in-out;
+
+  &.modal-mask2 {
+    background-color: rgba(0, 0, 0, .5);
+    transition: opacity .3s ease;
+  }
+}
+
+.giang {
+  &.giang-a {
+    color: red;
+  }
+  &> .giang-b {
+    color: blue;
+  }
+}
+
+
+$color-red: red;
+.btng {
+  color: $color-red;
+  .btng-default {
+    background-color: black;
+  }
 }
 
 .modal-wrapper {
@@ -20,7 +45,7 @@
   height: 100%;
   margin: 0px auto;
   padding: 20px 30px;
-  background-color: #ffffff;
+  background-color: $color-white;
   border-radius: 2px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, .33);
   transition: all .3s ease-in-out;
@@ -33,12 +58,12 @@
 
 .modal-header h3 {
   margin-top: 0;
-  color: #ffffff;
+  color: $color-white;
 }
 
 .modal-header .text-title {
   font-size: 30px;
-  color: #ffffff;
+  color: $color-white;
 }
 
 
@@ -162,18 +187,6 @@
 }
 
 
-//dialog2
-.modal-mask2 {
-  position: fixed;
-  z-index: 9998;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, .5);
-  display: table;
-  transition: opacity .3s ease;
-}
 
 .modal-wrapper2 {
   display: table-cell;
@@ -204,16 +217,12 @@
   float: right;
 }
 
-.modal-enter2 {
+.modal2-enter, .modal2-leave-active {
   opacity: 0;
 }
 
-.modal-leave-active2 {
-  opacity: 0;
-}
-
-.modal-enter2 .modal-container2,
-.modal-leave-active2 .modal-container2 {
+.modal2-enter .modal-container2,
+.modal2-leave-active .modal-container2 {
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
 }
