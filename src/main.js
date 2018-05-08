@@ -11,10 +11,13 @@ import 'vue-material/dist/theme/default.css';
 import 'element-ui/lib/theme-chalk/index.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import Popover from 'vue-js-popover';
+import popup from './components/PopupFixed/popup';
+
 
 import App from './App';
 import router from './router';
 
+Vue.component('popup', popup);
 Vue.use(VueMaterial);
 Vue.use(Element);
 Vue.use(Popover);

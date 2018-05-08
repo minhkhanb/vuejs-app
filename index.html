@@ -20,8 +20,50 @@
   <body>
     <div id="app"></div>
     <!-- built files will be auto injected -->
-  <script>
-    // $('#datetimepicker').datetimepicker();
-  </script>
+    <script type="text/x-template" id="modal-template">
+      <transition name="modal">
+        <div class="modal-mask">
+          <div class="modal-wrapper">
+            <div class="modal-container">
+              <div class="modal-header">
+                <slot name="header">
+                  <div class="row">
+                    <div style="display: inline-block;">
+                      <button class="btn btn-icon" @click="$emit('close')">
+                        <span class="icon material-icons text-title"><i aria-hidden="true" class="">&times;</i></span>
+                      </button>
+                    </div>
+                    <div style="display: inline-block; padding: 1.5rem 0;"><h3 style="">Setting</h3></div>
+                  </div>
+                </slot>
+              </div>
+
+              <div class="modal-body">
+                <slot name="body">
+                  <div class="card-text">
+                    <div class="header">
+                      <button type="button" class="btn theme--dark primary"><span class="btn__content">Open Dialog 2</span></button>
+                      <span class="tooltip tooltip--right">
+                      <span>
+                        <button type="button" class="btn">
+                          <span class="btn__content">Tool Tip Activator</span>
+                        </button>
+                      </span>
+                    </span>
+                    </div>
+                  </div>
+                </slot>
+              </div>
+
+              <div class="modal-footer">
+                <slot name="footer">
+                  default footer
+                </slot>
+              </div>
+            </div>
+          </div>
+        </div>
+      </transition>
+    </script>
   </body>
 </html>

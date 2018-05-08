@@ -1,11 +1,13 @@
 import Vue from 'vue';
+// import popup from './popup';
 
-const Dialog = { template: '#modal-template' };
+// const Dialog = { template: '#modal-template' };
 const Dialog2 = { template: '#modal-template2' };
 
 const PopupComponent = Vue.extend({
   components: {
-    'modal': Dialog,
+    // 'modal': Dialog,
+    // 'popup': popup,
     'modal2': Dialog2,
   },
 

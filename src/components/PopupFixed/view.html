@@ -1,50 +1,6 @@
 <div>
   <!-- template for the modal component -->
-  <script type="text/x-template" id="modal-template">
-    <transition name="modal">
-      <div class="modal-mask">
-        <div class="modal-wrapper">
-          <div class="modal-container">
-            <div class="modal-header">
-              <slot name="header">
-                <div class="row">
-                  <div style="display: inline-block;">
-                    <button class="btn btn-icon" @click="$emit('close')">
-                      <span class="icon material-icons text-title"><i aria-hidden="true" class="">&times;</i></span>
-                    </button>
-                  </div>
-                  <div style="display: inline-block; padding: 1.5rem 0;"><h3 style="">Setting</h3></div>
-                </div>
-              </slot>
-            </div>
 
-            <div class="modal-body">
-              <slot name="body">
-                <div class="card-text">
-                  <div class="header">
-                    <button type="button" class="btn theme--dark primary"><span class="btn__content">Open Dialog 2</span></button>
-                    <span class="tooltip tooltip--right">
-                      <span>
-                        <button type="button" class="btn">
-                          <span class="btn__content">Tool Tip Activator</span>
-                        </button>
-                      </span>
-                    </span>
-                  </div>
-                </div>
-              </slot>
-            </div>
-
-            <div class="modal-footer">
-              <slot name="footer">
-                default footer
-              </slot>
-            </div>
-          </div>
-        </div>
-      </div>
-    </transition>
-  </script>
   <script type="text/x-template" id="modal-template2">
     <transition name="modal2">
       <div class="modal-mask modal-mask2">
@@ -79,16 +35,12 @@
   <!-- app -->
   <div id="popup" style="display: inline-block;">
     <button class="btn theme--dark primary" id="show-modal" @click="showModal = true">
-      <div class="btn-content">
+      <span class="btn-content">
         Open Dialog 1
-      </div>
+      </span>
     </button>
     <!-- use the modal component, pass in the prop -->
     <modal v-if="showModal" @close="showModal = false">
-      <!--
-        you can use custom content here to overwrite
-        default content
-      -->
 
     </modal>
   </div>
@@ -98,10 +50,11 @@
         Open Dialog 2
       </span>
     </button>
+    <popup v-if="showModal2" @close="showModal2 = false"></popup>
 
-    <modal2 v-if="showModal2" @close="showModal2 = false">
-      <h3 slot="header2">custom header</h3>
-    </modal2>
+    <!--<modal2 v-if="showModal2" @close="showModal2 = false">-->
+      <!--<h3 slot="header2">custom header</h3>-->
+    <!--</modal2>-->
   </div>
 </div>
 
