@@ -8,15 +8,17 @@ Vue.use(DatePicker);
 const vuelidate = require('vuelidate');
 const validators = require('vuelidate/lib/validators');
 
-const UserAddComponent = Vue.extend({
-  name: 'FormValidation',
+const UserAdd = Vue.extend({
+  name: 'user-add',
   mixins: [vuelidate.validationMixin],
 
   components: {
     [DatePicker.name]: DatePicker,
     mdPicker: mdPicker,
   },
-  props: {},
+  props: {
+    userAdded: Function,
+  },
   computed: {
     yearsBD() {
       let arr = [];
@@ -79,7 +81,7 @@ const UserAddComponent = Vue.extend({
         newMember.datePicker = this.form.datePicker;
         newMember.age = yearPresent - this.form.datePicker;
 
-        this.$emit('userAdded', newMember);
+        this.userAdded(newMember);
         this.clearForm();
       }
     },
@@ -173,4 +175,4 @@ const UserAddComponent = Vue.extend({
   },
 });
 
-export default UserAddComponent;
+export default UserAdd;

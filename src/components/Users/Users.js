@@ -5,7 +5,7 @@ import UserList from './UserList/index';
 
 const UsersComponent = Vue.extend({
   components: {
-    appUserAdd: UserAdd,
+    UserAdd,
     appUserList: UserList,
   },
 
@@ -22,7 +22,7 @@ const UsersComponent = Vue.extend({
   },
 
   methods: {
-    userAdded(newMember) {
+    userAdded2qqqwww(newMember) {
       this.users.push(newMember);
     },
 
